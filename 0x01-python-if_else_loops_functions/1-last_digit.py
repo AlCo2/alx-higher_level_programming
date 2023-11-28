@@ -8,6 +8,7 @@ if number < 9:
     negative = True
 if negative:
     n = number % 10 * -1
+    number *= -1
 else:
     n = number % 10
 if n > 5:
