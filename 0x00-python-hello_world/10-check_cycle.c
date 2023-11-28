@@ -1,12 +1,12 @@
 #include "lists.h"
 
-/*
+/**
  * check_cycle - function to check if linked list a cycle
  *
  * @list: the linked list
  *
  * Return: true if a cycle, false if not
- */
+*/
 
 int check_cycle(listint_t *list)
 {
@@ -16,7 +16,7 @@ int check_cycle(listint_t *list)
 	while (temp)
 	{
 		temp = temp->next;
-		if(temp == fixed)
+		if (temp == fixed)
 			return (1);
 	}
 	return (0);
