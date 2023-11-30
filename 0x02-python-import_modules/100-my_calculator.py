@@ -2,7 +2,7 @@
 if __name__ == '__main__':
     import sys
     from calculator_1 import *
-    
+
     size = len(sys.argv)
     argv = sys.argv
     if size == 4:
@@ -23,4 +23,3 @@ if __name__ == '__main__':
     else:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
-        
