@@ -4,6 +4,7 @@
 
 
 class Node:
+    """this is the representation of a class"""
     def __init__(self, data, next_node=None):
         self.__data = data
         self.__next_node = next_node
@@ -30,7 +31,7 @@ class Node:
 
 
 class SinglyLinkedList:
-
+    """this is the singly linked list class"""
     def __init__(self):
         self.__head = None
 
