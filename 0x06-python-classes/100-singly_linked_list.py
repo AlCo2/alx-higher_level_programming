@@ -6,6 +6,10 @@
 class Node:
     """this is the representation of a class"""
     def __init__(self, data, next_node=None):
+        if not isinstance(data, int):
+            raise TypeError("data must be an integer")
+        if not isinstance(next_node, Node) and next_node is not None:
+            raise TypeError("next_node must be a Node object")
         self.__data = data
         self.__next_node = next_node
 
