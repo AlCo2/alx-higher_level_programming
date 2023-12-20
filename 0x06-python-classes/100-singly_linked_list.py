@@ -41,10 +41,11 @@ class SinglyLinkedList:
 
     def __str__(self):
         temp = self.__head
+        list = []
         while temp:
-            print(temp.data)
+            list.append(str(temp.data))
             temp = temp.next_node
-        return ""
+        return "\n".join(list)
 
     def sorted_insert(self, value):
         new_node = Node(value, None)
@@ -69,3 +70,19 @@ class SinglyLinkedList:
                     last = temp.next_node
                     temp.next_node = new_node
                     new_node.next_node = last
+
+
+sll = SinglyLinkedList()
+sll.sorted_insert(2)
+sll.sorted_insert(5)
+sll.sorted_insert(3)
+sll.sorted_insert(10)
+sll.sorted_insert(1)
+sll.sorted_insert(-4)
+sll.sorted_insert(-3)
+sll.sorted_insert(4)
+sll.sorted_insert(5)
+sll.sorted_insert(12)
+sll.sorted_insert(3)
+print(sll)
+
