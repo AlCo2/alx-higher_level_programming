@@ -3,4 +3,3 @@
 class Rectangle:
     """ representation of a empty rectangle class """
     pass
-
