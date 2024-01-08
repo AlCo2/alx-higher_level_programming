@@ -18,6 +18,8 @@ Now use it:
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+    >>> add_integer(0, 0)
+    0
     >>> add_integer(0)
     98
     >>> add_integer()
