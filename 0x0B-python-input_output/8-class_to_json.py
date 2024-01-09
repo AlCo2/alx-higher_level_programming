@@ -13,4 +13,4 @@ def class_to_json(obj):
     serialization of an object
     """
 
-    return json.dumps(obj)
+    return json.dumps(obj.__str__)
