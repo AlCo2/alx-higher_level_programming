@@ -13,29 +13,16 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
-        return {'first_name': self.first_name,
-                'last_name': self.last_name,
-                'age': self.age
-                }
-
     def to_json(self, attrs=None):
         dic = {}
-        if not isinstance(attrs, list):
-            return {'first_name': self.first_name,
-                    'last_name': self.last_name,
-                    'age': self.age
-                    }
-        for name in attrs:
-            if name == 'first_name':
-                dic['first_name'] = self.first_name
-            if name == 'age':
-                dic['age'] = self.age
-            if name == 'last_name':
-                dic['last_name'] = self.last_name
-        if (len(dic) > 0):
+        if isinstance(attrs, list):
+            for name in attrs:
+                if name == 'first_name':
+                    dic['first_name'] = self.first_name
+                if name == 'age':
+                    dic['age'] = self.age
+                if name == 'last_name':
+                    dic['last_name'] = self.last_name
+        if (len(dic) > 0 and isinstance(attrs, list)):
             return dic
-        return {'first_name': self.first_name,
-                'last_name': self.last_name,
-                'age': self.age
-                }
+        return self.__dict__
