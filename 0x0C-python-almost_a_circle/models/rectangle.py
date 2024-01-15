@@ -93,8 +93,8 @@ class Rectangle(Base):
     def __str__(self):
         if type(self).__name__ == 'Square':
             return "[{}] ({}) {}/{} - {}".format(type(self).__name__,
-                                                    self.id, self.__x, self.__y,
-                                                    self.__width)
+                                                 self.id, self.__x, self.__y,
+                                                 self.__width)
         return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__,
                                                 self.id, self.__x, self.__y,
                                                 self.__width, self.__height)
@@ -124,3 +124,8 @@ class Rectangle(Base):
                     self.__x = value
                 elif key == 'y':
                     self.__y = value
+
+    def to_dictionary(self):
+        return {'x': self.__x, 'y': self.__y,
+                'id': self.id,
+                'height': self.__height, 'width': self.__width}
