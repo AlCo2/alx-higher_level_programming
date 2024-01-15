@@ -7,6 +7,9 @@ class Rectangle(Base):
     """ rectangle class """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        init the class
+        """
         self.width = width
         self.height = height
         self.x = x
@@ -62,7 +65,7 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         for y in range(self.__y):
