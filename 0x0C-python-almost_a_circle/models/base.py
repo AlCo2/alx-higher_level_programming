@@ -58,3 +58,30 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = str(cls.__name__) + ".csv"
+        with open(filename, 'w') as f:
+            for rect in list_objs:
+                if cls.__name__ == 'Rectangle':
+                    f.write(f"{rect.id}, {rect.width},
+                            {rect.height}, {rect.x}, {rect.y}\n")
+                else:
+                    f.write(f"{rect.id}, {rect.size}, {rect.x}, {rect.y}\n")
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = str(cls.__name__) + ".csv"
+        list = []
+        with open(filename, 'r') as f:
+            for line in f:
+                line = line.replace('\n', '')
+                temp = [int(i) for i in line.split(',')]
+                if cls.__name__ == 'Rectangle':
+                    list.append(cls(id=temp[0], width=temp[1],
+                                    height=temp[2], x=temp[3], y=temp[4]))
+                else:
+                    list.append(cls(id=temp[0],
+                                    size=temp[1], x=temp[2], y=temp[3]))
+        return list
