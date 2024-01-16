@@ -41,13 +41,14 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        if dictionary and dictionary != {}:
-            if cls.__name__ == "Rectangle":
-                inst = cls(1, 1)
-            else:
-                inst = cls(1)
-            inst.update(**dictionary)
-            return inst
+        if cls.__name__ == "Rectangle":
+            new = cls(1, 1)
+        elif cls.__name == "Square":
+            new = cls(1)
+        else:
+            new = None
+        new.update(**dictionary)
+        return new
 
     @classmethod
     def load_from_file(cls):
@@ -55,5 +56,5 @@ class Base:
             with open(f"{cls.__name__}.json", 'r') as f:
                 dict = Base.from_json_string(f.read())
                 return [cls.create(**d) for d in dict]
-        except error:
+        except IOerror:
             return []
