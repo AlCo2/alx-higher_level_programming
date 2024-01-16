@@ -19,6 +19,9 @@ class Square(Rectangle):
         self.height = size
 
     def update(self, *args, **kwargs):
+        """
+        update method
+        """
         if len(args) < 1:
             for key, value in kwargs.items():
                 if key == 'id':
@@ -43,6 +46,9 @@ class Square(Rectangle):
                     self.y = arg
 
     def to_dictionary(self):
+        """
+        to dict method
+        """
         return {'id': self.id,
                 'x': self.x,
                 'size': self.width,
