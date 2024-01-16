@@ -74,6 +74,9 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
+        """
+        display Method
+        """
         for y in range(self.__y):
             print("")
         for i in range(self.__height):
@@ -84,6 +87,9 @@ class Rectangle(Base):
             print("")
 
     def __str__(self):
+        """
+        str method
+        """
         if type(self).__name__ == 'Square':
             return "[{}] ({}) {}/{} - {}".format(type(self).__name__,
                                                  self.id, self.__x, self.__y,
@@ -93,6 +99,9 @@ class Rectangle(Base):
                                                 self.__width, self.__height)
 
     def update(self, *args, **kwargs):
+        """
+        update method
+        """
         if len(args) > 0:
             for i, arg in enumerate(args):
                 if i == 0:
@@ -119,6 +128,9 @@ class Rectangle(Base):
                     self.__y = value
 
     def to_dictionary(self):
+        """
+        to dictionary method
+        """
         return {'x': self.__x, 'y': self.__y,
                 'id': self.id,
                 'height': self.__height, 'width': self.__width}
