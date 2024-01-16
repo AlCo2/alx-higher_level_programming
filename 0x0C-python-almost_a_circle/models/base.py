@@ -83,8 +83,8 @@ class Base:
         with open(filename, 'w') as f:
             for rect in list_objs:
                 if cls.__name__ == 'Rectangle':
-                    f.write(f"{rect.id}, {rect.width},
-                            {rect.height}, {rect.x}, {rect.y}\n")
+                    f.write("{}, {}, {}, {}, {}\n".format(rect.id, rect.width,
+                            rect.height, rect.x, rect.y))
                 else:
                     f.write(f"{rect.id}, {rect.size}, {rect.x}, {rect.y}\n")
 
