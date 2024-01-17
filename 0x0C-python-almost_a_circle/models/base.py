@@ -108,4 +108,6 @@ class Base:
         return list
         
     def draw(list_rectangles, list_squares):
-
+        """
+        draw to screen
+        """
