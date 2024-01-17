@@ -12,6 +12,9 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """
+        init
+        """
         if id is not None:
             self.id = id
         else:
@@ -106,7 +109,7 @@ class Base:
                     list.append(cls(id=temp[0],
                                     size=temp[1], x=temp[2], y=temp[3]))
         return list
-        
+
     def draw(list_rectangles, list_squares):
         """
         draw to screen
