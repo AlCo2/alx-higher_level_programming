@@ -1,0 +1,1 @@
+init to javascript in alx program
