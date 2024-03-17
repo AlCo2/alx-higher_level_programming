@@ -16,4 +16,3 @@ if __name__ == "__main__":
     session = Session()
     for row in session.query(State).order_by(State.id):
         print("{}: {}".format(row.id, row.name))
-
