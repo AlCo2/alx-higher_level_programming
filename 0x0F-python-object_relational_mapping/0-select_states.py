@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" connect to database and fetch some data """
 import sys
 import MySQLdb
 
@@ -13,3 +14,5 @@ if __name__ == '__main__':
     rows = cur.fetchall()
     for row in rows:
         print(row)
+    cur.close()
+    db.close()
