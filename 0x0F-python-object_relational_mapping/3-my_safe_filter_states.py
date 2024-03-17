@@ -8,15 +8,11 @@ if __name__ == '__main__':
     password = sys.argv[2]
     database = sys.argv[3]
     state = sys.argv[4]
-    state = state.replace('"', '')
-    state = state.replace(";", '')
-    state = state.replace("'", '')
-    print(state)
     db = MySQLdb.connect(host="localhost",
                          user=username, passwd=password, db=database)
     cur = db.cursor()
     cur.execute("""SELECT * FROM states WHERE
-                name LIKE BINARY '{}' ORDER BY states.id""".format(state))
+                name LIKE BINARY %s ORDER BY states.id""", (state,))
     rows = cur.fetchall()
     for row in rows:
         print(row)
