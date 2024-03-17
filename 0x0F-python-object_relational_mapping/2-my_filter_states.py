@@ -11,8 +11,8 @@ if __name__ == '__main__':
     db = MySQLdb.connect(host="localhost",
                          user=username, passwd=password, db=database)
     cur = db.cursor()
-    cur.execute(f"""SELECT * FROM states WHERE
-                name LIKE BINARY '{state}' ORDER BY states.id ASC""")
+    cur.execute("""SELECT * FROM states WHERE
+                name ='{}' ORDER BY states.id""".format(state))
     rows = cur.fetchall()
     for row in rows:
         print(row)
