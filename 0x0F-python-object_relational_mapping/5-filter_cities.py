@@ -17,9 +17,7 @@ if __name__ == '__main__':
                 where states.name LIKE BINARY %s
                 ORDER BY cities.id""", (state,))
     rows = cur.fetchall()
-    for i, row in enumerate(rows):
-        print(row[0], end='')
-        if i <= len(row):
-            print(', ', end='')
+    temp = list(row[0] for row in rows)
+    print(*temp, sep=', ')
     cur.close()
     db.close()
