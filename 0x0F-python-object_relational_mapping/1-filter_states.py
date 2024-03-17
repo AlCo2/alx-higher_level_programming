@@ -10,7 +10,7 @@ if __name__ == '__main__':
     db = MySQLdb.connect(host="localhost",
                          user=username, passwd=password, db=database)
     cur = db.cursor()
-    cur.execute("")
+    cur.execute("SELECT * FROM states WHERE name LIKE 'N%'")
     rows = cur.fetchall()
     for row in rows:
         print(row)
