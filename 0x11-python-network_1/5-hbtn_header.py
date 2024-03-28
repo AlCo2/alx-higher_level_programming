@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" script that fetches https://alx-intranet.hbtn.io/status """
+""" script that get X-Rquest-id from the header """
 import requests
 import sys
 
