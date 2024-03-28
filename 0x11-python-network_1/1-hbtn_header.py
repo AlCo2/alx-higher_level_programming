@@ -4,4 +4,5 @@ import sys
 import urllib.request
 
 with urllib.request.urlopen(sys.argv[1]) as response:
-    print(response.info()['X-Request-Id'])
+    print(dict(response.info()).get('X-Request-Id'))
+
