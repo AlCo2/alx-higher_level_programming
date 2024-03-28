@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-""" send json data """
+""" send json data using requests library """
 import requests
 import sys
 
 if __name__ == "__main__":
     url = sys.argv[1]
     q = ""
-    print(len(sys.argv))
     if len(sys.argv) > 2:
         q = sys.argv[2]
     response = requests.post(url, data={'q': q})
