@@ -14,6 +14,6 @@ if __name__ == "__main__":
         if i == 10:
             break
         sha = commit.get("sha")
-        author = commit.get("author").get("login")
+        author = commit.get("commit").get("author").get("name")
         print("{}: {}".format(sha, author))
         i += 1
