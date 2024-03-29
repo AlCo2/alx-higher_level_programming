@@ -4,11 +4,10 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    url = sys.argv[1]
     q = ""
-    if len(sys.argv) > 2:
-        q = sys.argv[2]
-    response = requests.post(url, data={'q': q})
+    if len(sys.argv) > 1:
+        q = sys.argv[1]
+    response = requests.post("http://0.0.0.0:5000/search_user", data={'q': q})
     try:
         response = response.json()
         if response == {}:
