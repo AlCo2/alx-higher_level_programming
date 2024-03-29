@@ -11,9 +11,9 @@ if __name__ == "__main__":
     response = requests.get(url)
     i = 0
     for commit in response.json():
-        i += 1
+        if i == 10:
+            break
         sha = commit.get("sha")
         author = commit.get("author").get("login")
         print("{}: {}".format(sha, author))
-        if i == 11:
-            break
+        i += 1
